@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Title</title>
+
 
     <link rel="preload" as="image" href="img/40d453u-960.jpg">
     <link rel="preload" as="image" href="img/box1m.jpg">
@@ -12,6 +14,8 @@
     <link rel="preload" as="image" href="img/maxresdefaudfdlt.jpg">
     <link rel="preload" as="image" href="img/ufc-ea-05.jpg">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -35,6 +39,7 @@
 <!--first  page - intro-->
 <div class="intro-content">
     <span class="intro-zone">
+        <!--<a id="goMain" onclick="GoMain()">-->
         <a id="goMain">
             <span>Go Next</span>
             <span class="btnBefore"></span>
@@ -46,28 +51,75 @@
 
 <!--second page-->
 <div class="second-page">
-    <div class="center-content pane" data-go="g1"  id="g1">
+    <div class="center-content pane main-pane" data-go="g1" id="g1">
         <!--<div class="content"></div>-->
+
+        <div class="help">
+            <span class="symbol">?</span>
+            <span class="block">
+            </span>
+
+            <div class="animated bounceIn promo">
+                <div>Ввести промокод</div>
+                <input type="text">
+            </div>
+        </div>
+
     </div>
 
+
     <div class="center-left pane" data-go="g2" id="g2">
-        <div class="content">
-            <button>dfdsfds</button>
+        <div class="content"></div>
+        <div class="zone">
+            <div class="animated fadeInLeft">
+                <h1>Lorem title</h1>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+            </div>
         </div>
     </div>
 
     <div class="left pane" data-go="g3" id="g3">
-        <div class="content">
-            sadfasdfdasfasdfdas
+        <div class="content"></div>
+        <div class="zone ">
+            <div class="animated fadeInLeft">
+                <h1>Lorem title</h1>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+            </div>
         </div>
     </div>
 
-    <div class="center-right pane" data-go="g4"  id="g4">
+    <div class="center-right pane" data-go="g4" id="g4">
         <div class="content"></div>
+        <div class="zone ">
+            <div class="animated fadeInRight">
+                <h1>Lorem title</h1>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+            </div>
+        </div>
     </div>
 
     <div class="right pane" data-go="g5" id="g5">
         <div class="content"></div>
+        <div class="zone ">
+            <div class="animated fadeInRight">
+                <h1>Lorem title</h1>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="social animated bounceInUp">
+        <a><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <!--<a><i class="fa fa-tumblr" aria-hidden="true"></i></a>-->
+        <!--<a><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+        <!--<a><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>-->
+        <a><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <a><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a><i class="fa fa-vk" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="logo animated bounceInDown">
+        <img src="img/Logo.png" alt="">
     </div>
 </div>
 

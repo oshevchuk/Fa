@@ -2,38 +2,11 @@
  * Created by Oshevchuk on 20.06.2017.
  */
 
-// (function () {
-var isGoing=false;
-var isMobile=false;
-var landType='port';
-
-    function GoMain() {
-        isGoing=true;
-        $('.anim-zone').addClass('anim-zone-end');
-        $('.homepage-hero-module').delay(1000).fadeOut(300, function () {
-            $('.intro-content').hide();
-            $('body').css('background-color', 'black');
-            if (!$('body').hasClass('mobile')) {
-                $('body').css('min-width', '1024px');
-            }
-
-            // $('.second-page').show(0, function () {
-            //     $('.center-content').delay(300).fadeIn(400, function () {
-            //
-            //     });
-            // });
-            $('.second-page').delay(500).fadeIn(700, function () {
-                $('.social').show();
-                $('.logo').show();
-                $('.promo').show();
-            });
-        });
-    }
-
+(function () {
     $(document).ready(function () {
 
         var lanscapeOrientation = false;
-
+        toogleorientation();
 
         if (window.navigator.userAgent.match(/Mobile/i)
             || window.navigator.userAgent.match(/iPhone/i)
@@ -44,7 +17,6 @@ var landType='port';
             || window.navigator.userAgent.match(/BlackBerry/i)
             || window.navigator.userAgent.match(/webOS/i)) {
             document.body.className += ' mobile';
-            isMobile=true;
             // alert('True - Mobile - ' + navigator.userAgent);
         } else {
             // alert('False - Mobile - ' + navigator.userAgent);
@@ -78,116 +50,43 @@ var landType='port';
             ;
         });
 
-        var mql = window.matchMedia("(orientation: portrait)");
-        if(mql.matches) {
-            // Portrait orientation
-            landType='port';
-        } else {
-            // Landscape orientation
-            landType='landscape-primary';
-        }
-        mql.addListener(function(m) {
-            // toogleorientation(m.matches);
-            if(m.matches) {
-                // Changed to portrait
-                // screen.orientation.type='portrait';
-                landType='port';
-            }
-            else {
-                // Changed to landscape
-                // toogleorientation(m.matches);
-                // console.log(m);
-                // alert(1);
-                // screen.orientation.type='landscape-primary';
-                landType='landscape-primary';
-            }
-            toogleorientation();
-        });
-
         // document.addEventListener("orientationchange", function (event) {
         //     toogleorientation();
         // });
-        // try {
-            window.addEventListener("orientationchange", function () {
-                landType=screen.orientation.type;
-                toogleorientation();
-            });
-        // } catch (err){
-        //     alert(err);
-        // }
+        window.addEventListener("orientationchange", function () {
+            toogleorientation();
+        });
 
-        // setTimeout(toogleorientation, 100);
-        toogleorientation(false);
-        function toogleorientation(match) {
-            // alert(screen.orientation.type);
-            // try {
-                if (isMobile) {
-                    $('.zone').hide();
-
-
-                    // if (screen.orientation.type == 'landscape-primary') {
-                    if (landType == 'landscape-primary') {
-                    // if (!match) {
-                        lanscapeOrientation = true;
-                        $('.pane').css({top: '0', height: '100vh'});
-                        $('#g2').animate({width: '33%', left: '17%'}, 200, function () {
-                            $(this).css({zIndex: '15'});
-                        });
-                        $('#g4').animate({width: '33%', left: '50%'}, 200, function () {
-                            $(this).css({zIndex: '15'});
-                        });
-                        $('#g3').animate({width: '33%', left: '-16%'}, 200, function () {
-                            $(this).css({zIndex: '15'});
-                        });
-                        $('#g5').animate({width: '43%', left: '83%'}, 200);
-                        $('.center-content').hide();
-                        ;
-                    } else {
-                        lanscapeOrientation = false;
-                        $('.pane').css({height: '33', width: '100%', left: '0'});
-
-                        $('#g2').animate({height: '33%', top: '17%'}, 200, function () {
-                            $(this).css({zIndex: '15'});
-                        });
-                        $('#g4').animate({height: '33%', top: '50%'}, 200, function () {
-                            $(this).css({zIndex: '15'});
-                        });
-                        $('#g3').animate({height: '33%', top: '-16%'}, 200, function () {
-                            $(this).css({zIndex: '5'});
-                        });
-                        $('#g5').animate({height: '43%', top: '83%'}, 200, function () {
-                            $(this).css({zIndex: '15'});
-                        });
-                    }
-
-                    // console.log(lanscapeOrientation);
-                }
-            // }catch (err){}
+        function toogleorientation() {
+            if (screen.orientation.type == 'landscape-primary') {
+                lanscapeOrientation = true;
+            } else {
+                lanscapeOrientation = false;
+            }
+            console.log(lanscapeOrientation);
         }
-        // alert(1);
+
         $('#goMain').on('click', function () {
-        // $('#goMain').on('click touchstart', function () {
-            if(!isGoing)
-                GoMain();
-            // $('.anim-zone').addClass('anim-zone-end');
-            // $('.homepage-hero-module').delay(1000).fadeOut(300, function () {
-            //     $('.intro-content').hide();
-            //     $('body').css('background-color', 'black');
-            //     if (!$('body').hasClass('mobile')) {
-            //         $('body').css('min-width', '1024px');
-            //     }
-            //
-            //     // $('.second-page').show(0, function () {
-            //     //     $('.center-content').delay(300).fadeIn(400, function () {
-            //     //
-            //     //     });
-            //     // });
-            //     $('.second-page').delay(500).fadeIn(700, function () {
-            //         $('.social').show();
-            //         $('.logo').show();
-            //         $('.promo').show();
-            //     });
-            // });
+            // alert(1);
+            $('.anim-zone').addClass('anim-zone-end');
+            $('.homepage-hero-module').delay(1000).fadeOut(300, function () {
+                $('.intro-content').hide();
+                $('body').css('background-color', 'black');
+                if (!$('body').hasClass('mobile')) {
+                    $('body').css('min-width', '1024px');
+                }
+
+                // $('.second-page').show(0, function () {
+                //     $('.center-content').delay(300).fadeIn(400, function () {
+                //
+                //     });
+                // });
+                $('.second-page').delay(500).fadeIn(700, function () {
+                    $('.social').show();
+                    $('.logo').show();
+                    $('.promo').show();
+                });
+            });
 
             // animate({}, 700, function () {
             //     $(this).fadeOut();
@@ -240,8 +139,8 @@ var landType='port';
                 }
             } else {
                 // $(this).animate({width: "60%", height: '60%'}, 400);
-                if (!lanscapeOrientation) {
-                    // console.log(2);
+                // if (!lanscapeOrientation) {
+                //     console.log(2);
                     switch ($(this).data('go')) {
                         case 'g2':
                             $('#g2').delay(200).css({zIndex: '20'}).animate({height: '43%', top: '12%'}, 700);//, function () {
@@ -260,28 +159,27 @@ var landType='port';
                             $('#g5').find('.zone').show();
                             break;
                     }
+                // }else{
+                //     console.log(1);
+                //     switch ($(this).data('go')) {
+                //         case 'g2':
+                //             $('#g2').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '12%'}, 700);//, function () {
+                //             $('#g2').find('.zone').show();
+                //             break;
+                //         case 'g4':
+                //             $('#g4').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '45%'}, 700);//, function () {
+                //             $('#g4').find('.zone').show();
+                //             break;
+                //         case 'g3':
+                //             $('#g3').delay(200).css({zIndex: '20', width: '48%'}).animate({width: '48%'}, 700);//, function () {
+                //             $('#g3').find('.zone').show();
+                //             break;
+                //         case 'g5':
+                //             $('#g5').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '73%'}, 700);
+                //             $('#g5').find('.zone').show();
+                //             break;
+                //     }
                 // }
-                }else{
-                    console.log(1);
-                    switch ($(this).data('go')) {
-                        case 'g2':
-                            $('#g2').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '12%'}, 700);//, function () {
-                            $('#g2').find('.zone').show();
-                            break;
-                        case 'g4':
-                            $('#g4').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '45%'}, 700);//, function () {
-                            $('#g4').find('.zone').show();
-                            break;
-                        case 'g3':
-                            $('#g3').delay(200).css({zIndex: '20'}).animate({width: '48%'}, 700);//, function () {
-                            $('#g3').find('.zone').show();
-                            break;
-                        case 'g5':
-                            $('#g5').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '73%'}, 700);
-                            $('#g5').find('.zone').show();
-                            break;
-                    }
-                }
             }
             canIddle = false;
         }).mouseleave(function () {
@@ -333,7 +231,7 @@ var landType='port';
             } else {
                 // $(this).animate({width: "50%", height: '50%'}, 200);
                 $('.zone').hide();
-                if (!lanscapeOrientation) {
+                // if (!lanscapeOrientation) {
                     switch ($(this).data('go')) {
                         case 'g2':
                             $('#g2').animate({height: '33%', top: '17%'}, 200, function () {
@@ -356,35 +254,34 @@ var landType='port';
                             });
                             break;
                     }
+                // }else{
+                //     switch ($(this).data('go')) {
+                //         case 'g2':
+                //             $('#g2').animate({width: '33%', left: '17%'}, 200, function () {
+                //                 $(this).css({zIndex: '15'});
+                //             });
+                //             break;
+                //         case 'g4':
+                //             $('#g4').animate({width: '33%', left: '50%'}, 200, function () {
+                //                 $(this).css({zIndex: '15'});
+                //             });
+                //             break;
+                //         case 'g3':
+                //             $('#g3').animate({width: '33%', left: '-16%'}, 200, function () {
+                //                 $(this).css({zIndex: '15'});
+                //             });
+                //             break;
+                //         case 'g5':
+                //             $('#g5').animate({width: '43%', left: '83%'}, 200, function () {
+                //                 $(this).css({zIndex: '15'});
+                //             });
+                //             break;
+                //     }
+                //
                 // }
-                }else{
-                    switch ($(this).data('go')) {
-                        case 'g2':
-                            $('#g2').animate({width: '33%', left: '17%'}, 200, function () {
-                                $(this).css({zIndex: '15'});
-                            });
-                            break;
-                        case 'g4':
-                            $('#g4').animate({width: '33%', left: '50%'}, 200, function () {
-                                $(this).css({zIndex: '15'});
-                            });
-                            break;
-                        case 'g3':
-                            $('#g3').animate({width: '33%', left: '-16%'}, 200, function () {
-                                $(this).css({zIndex: '15'});
-                            });
-                            break;
-                        case 'g5':
-                            $('#g5').animate({width: '43%', left: '83%'}, 200, function () {
-                                $(this).css({zIndex: '15'});
-                            });
-                            break;
-                    }
-
-                }
             }
             canIddle = true;
         });
 
     });
-// })();
+})();

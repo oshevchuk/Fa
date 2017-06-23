@@ -15,6 +15,14 @@ body {
   overflow: hidden;
   font-family: Proxima; }
 
+body::before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url("../img/40d453u-960.jpg") url("../img/box1m.jpg") url("../img/center.jpg") url("../img/Logo.png") url("../img/ufc-ea-05.jpg") url("../img/maxresdefaudfdlt.jpg"); }
+
 .homepage-hero-module {
   border: none;
   width: 100%;
@@ -407,8 +415,8 @@ body {
     -moz-box-shadow: 0 0 0 0 rgba(255, 199, 28, 0.4);
     box-shadow: 0 0 0 0 rgba(255, 199, 28, 0.4); }
   70% {
-    -moz-box-shadow: 0 0 0 20vw rgba(255, 199, 28, 0);
-    box-shadow: 0 0 0 10vw rgba(255, 199, 28, 0); }
+    -moz-box-shadow: 0 0 0 10vw rgba(255, 199, 28, 0);
+    box-shadow: 0 0 0 5vw rgba(255, 199, 28, 0); }
   100% {
     -moz-box-shadow: 0 0 0 0 rgba(255, 199, 28, 0);
     box-shadow: 0 0 0 0 rgba(255, 199, 28, 0); } }
@@ -453,7 +461,8 @@ body {
     position: relative; } }
 
 .mobile .pane, .mobile .content {
-  transform: none; }
+  transform: none;
+  transition: 0.4s; }
 
 .mobile .second-page {
   position: relative; }
@@ -550,117 +559,3 @@ body {
     height: 10vw;
     margin: 1%;
     font-size: 3vh; }
-
-@media screen and (orientation: landscape) {
-  .mobile {
-    max-height: inherit; }
-    .mobile .pane {
-      transform: none; }
-      .mobile .pane .zone {
-        max-width: 60%; }
-        .mobile .pane .zone span {
-          font-size: 20px; }
-        .mobile .pane .zone h1 {
-          font-size: 55px; }
-    .mobile .left {
-      top: 0;
-      width: 33%;
-      height: 100vh;
-      left: -16%;
-      position: absolute;
-      -ms-transform: skew(-30deg, 0deg);
-      -webkit-transform: skew(-30deg, 0deg);
-      transform: skew(-30deg, 0deg);
-      z-index: 15; }
-      .mobile .left .content {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        width: 200%;
-        left: -50%; }
-      .mobile .left .zone {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        top: 10%;
-        left: 25%; }
-    .mobile .center-left {
-      top: 0;
-      height: 100%;
-      width: 33%;
-      left: 17%;
-      -ms-transform: skew(-30deg, 0deg);
-      -webkit-transform: skew(-30deg, 0deg);
-      transform: skew(-30deg, 0deg);
-      z-index: 15; }
-      .mobile .center-left .content {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        width: 200%;
-        left: -50%; }
-      .mobile .center-left .zone {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        top: 10%;
-        left: auto;
-        right: 20%;
-        text-align: right;
-        max-width: 75%; }
-    .mobile .center-right {
-      top: 0;
-      height: 100%;
-      width: 33%;
-      right: auto;
-      left: 50%;
-      -ms-transform: skew(-30deg, 0deg);
-      -webkit-transform: skew(-30deg, 0deg);
-      transform: skew(-30deg, 0deg);
-      z-index: 15; }
-      .mobile .center-right .content {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        width: 200%;
-        left: -50%; }
-      .mobile .center-right .zone {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        top: 10%;
-        left: 10%;
-        text-align: right;
-        right: auto;
-        max-width: 75%; }
-    .mobile .right {
-      left: 83%;
-      height: 100%;
-      width: 33%;
-      top: 0;
-      -ms-transform: skew(-30deg, 0deg);
-      -webkit-transform: skew(-30deg, 0deg);
-      transform: skew(-30deg, 0deg);
-      z-index: 15; }
-      .mobile .right .content {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        width: 200%;
-        left: -50%; }
-      .mobile .right .zone {
-        -ms-transform: skew(30deg, 0deg);
-        -webkit-transform: skew(30deg, 0deg);
-        transform: skew(30deg, 0deg);
-        left: 0%;
-        top: 50%;
-        max-width: 75%; }
-    .mobile .social {
-      width: 50vh;
-      bottom: 10px;
-      left: 10px;
-      height: auto; }
-      .mobile .social a {
-        width: 10vh;
-        height: 10vh;
-        font-size: 3vh; } }
