@@ -370,6 +370,7 @@ body {
     top: calc(10% + 20px);
     max-width: 70%;
     display: none;
+    min-height: 50vh;
 
     h1 {
       color: #d7182a;
@@ -382,6 +383,22 @@ body {
       font-family: ProximaLight;
       font-size: 22px;
       color: white;
+    }
+
+    button {
+      //display: block;
+      position: absolute;
+      bottom: 10%;
+      border: none;
+      background-color: #d7182a;
+      color: white;
+      border-radius: 5px;
+      width: 130px;
+      height: 40px;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #292929;
     }
   }
 
@@ -454,6 +471,10 @@ body {
       transform: skewX(6deg);
       right: calc(5% + 35px);
       text-align: right;
+
+      button {
+        right: 0;
+      }
     }
   }
 
@@ -507,6 +528,10 @@ body {
       right: calc(15% + 15px);
       text-align: right;
       transform: skewX(6deg);
+
+      button {
+        right: 0;
+      }
     }
     //-webkit-animation: blocks-order 0.8s forwards; /* Safari 4.0 - 8.0 */
     //animation: blocks-order 0.8s forwards;
@@ -618,11 +643,11 @@ body {
   .promo-overlay {
     z-index: 30;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     display: none;
 
     .promo {
@@ -772,67 +797,7 @@ body {
     //transform: skewX(0deg);
     transform: none;
   }
-  //
-  //.center-content{
-  //  z-index: 20;
-  //  width: 200px;
-  //  //height: 20%;
-  //  //border: 1px solid #d7182a;
-  //  top: calc(50% - 85px);
-  //  left: calc(50% - 97px);
-  //
-  //  background: transparent;
-  //
-  //  .help{
-  //    top: 35px;
-  //
-  //    .promo{
-  //      display: none;
-  //    }
-  //  }
-  //
-  //  .help:hover{
-  //    .promo{
-  //      display: block;
-  //    }
-  //  }
-  //}
-  //
-  //.center-left{
-  //  width: 50%;
-  //  height: 50%;
-  //  bottom:0;
-  //  left: 0;
-  //  .zone{
-  //    transform: none;
-  //  }
-  //}
-  //.left{
-  //  width: 50%;
-  //  height: 50%;
-  //  top:0;
-  //  left: 0;
-  //
-  //}
-  //.center-right{
-  //  width: 50%;
-  //  height: 50%;
-  //  top:0;
-  //  right: 0;
-  //  .content{
-  //    right: 0;
-  //    width: 100%;
-  //  }
-  //  .zone{
-  //    transform: none;
-  //  }
-  //}
-  //.right{
-  //  width: 50%;
-  //  height: 50%;
-  //  bottom:0;
-  //  right: 0;
-  //}
+
   .second-page {
     position: relative;
   }
@@ -844,6 +809,10 @@ body {
     }
     span {
       font-size: 25px;
+    }
+    button{
+      margin-top: 20px;
+      position: relative;
     }
   }
 
@@ -910,7 +879,9 @@ body {
     }
     .zone {
       transform: skewY(30deg);
-      top: 25%;
+      //top: 25%;
+      top: 37%;
+      left: calc(5% + 15px);
     }
 
     //transform: skewY(-30deg);
@@ -963,14 +934,31 @@ body {
     }
   }
 
-  .help-zone{
+  .help-zone {
     z-index: 30;
-    top: calc(50% - 100px);
+    //top: calc(50% - 100px);
+    top: calc(50% - 12vw);
+    left: calc(50% - 12vw);
+    transition: 0.4s ease all;
+
+    .symbol {
+      width: 24vw;
+      height: 24vw;
+      line-height: 24vw;
+    }
+
+    .block {
+      width: 24vw;
+      height: 24vw;
+    }
   }
-  .promo{
-    width: 60vw;
-    left: calc(50% - 30vw);
-    input{
+  .promo {
+    width: 60vw !important;
+    left: calc(50% - 30vw) !important;
+    div {
+      font-size: 4vw;
+    }
+    input {
       font-size: 5vw;
     }
   }
@@ -992,11 +980,15 @@ body {
       //transform: skew(-30deg, 0deg);
       .zone {
         max-width: 60%;
+
         span {
           font-size: 20px;
         }
         h1 {
           font-size: 55px;
+        }
+        button {
+          position: relative;
         }
       }
     }
@@ -1139,10 +1131,62 @@ body {
         font-size: 3vh;
       }
     }
-  }
 
+    .promo-overlay {
+      width: 102vw;
+      .promo {
+        div {
+          font-size: 3vw !important;
+        }
+        input {
+          font-size: 5vh !important;
+          width: 75% !important;
+        }
+      }
+    }
+
+    .help-zone {
+      //top: calc(50% - 12vw) !important;
+      //left: calc(50% - 9vw) !important;
+      top: calc(50% - 12vw) ;
+      left: calc(50% - 9vw) ;
+      .help {
+        display: flex;
+
+        .block {
+          width: 14vw;
+          height: 14vw;
+        }
+        .symbol {
+          margin: auto;
+          width: 14vw;
+          height: 14vw;
+          line-height: 14vw;
+        }
+      }
+    }
+  }
 }
 
+.goDown {
+  top: calc(65% - 100px) !important;
+  //transition: 0.4s ease all;
+}
+
+.goUp {
+  top: calc(35% - 100px) !important;
+  //transition: 0.4s ease all;
+}
+
+.goLeft {
+  left: calc(65% - 100px) !important;
+  //transition: 0.4s ease all;
+}
+
+.goRight {
+  left: calc(35% - 100px) !important;
+  //transition: 0.4s ease all;
+}
 
 
 

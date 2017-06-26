@@ -235,7 +235,8 @@ body {
     position: absolute;
     top: calc(10% + 20px);
     max-width: 70%;
-    display: none; }
+    display: none;
+    min-height: 50vh; }
     .second-page .zone h1 {
       color: #d7182a;
       font-family: ProximaBold;
@@ -245,6 +246,18 @@ body {
       font-family: ProximaLight;
       font-size: 22px;
       color: white; }
+    .second-page .zone button {
+      position: absolute;
+      bottom: 10%;
+      border: none;
+      background-color: #d7182a;
+      color: white;
+      border-radius: 5px;
+      width: 130px;
+      height: 40px;
+      font-size: 16px; }
+    .second-page .zone button:hover {
+      background-color: #292929; }
   .second-page .center-content {
     background-position: center center;
     background-size: cover;
@@ -293,6 +306,8 @@ body {
       transform: skewX(6deg);
       right: calc(5% + 35px);
       text-align: right; }
+      .second-page .center-right .zone button {
+        right: 0; }
   .second-page .left {
     height: 100%;
     z-index: 5;
@@ -325,6 +340,8 @@ body {
       right: calc(15% + 15px);
       text-align: right;
       transform: skewX(6deg); }
+      .second-page .right .zone button {
+        right: 0; }
   .second-page .social {
     position: fixed;
     bottom: 15px;
@@ -491,6 +508,9 @@ body {
     font-size: 70px; }
   .mobile .zone span, .tablet .zone span {
     font-size: 25px; }
+  .mobile .zone button, .tablet .zone button {
+    margin-top: 20px;
+    position: relative; }
 
 .mobile .center-content, .tablet .center-content {
   z-index: 20;
@@ -537,7 +557,8 @@ body {
     top: -50%; }
   .mobile .left .zone, .tablet .left .zone {
     transform: skewY(30deg);
-    top: 25%; }
+    top: 37%;
+    left: calc(5% + 15px); }
 
 .mobile .center-right, .tablet .center-right {
   width: 100%;
@@ -580,11 +601,22 @@ body {
 
 .mobile .help-zone, .tablet .help-zone {
   z-index: 30;
-  top: calc(50% - 100px); }
+  top: calc(50% - 12vw);
+  left: calc(50% - 12vw);
+  transition: 0.4s ease all; }
+  .mobile .help-zone .symbol, .tablet .help-zone .symbol {
+    width: 24vw;
+    height: 24vw;
+    line-height: 24vw; }
+  .mobile .help-zone .block, .tablet .help-zone .block {
+    width: 24vw;
+    height: 24vw; }
 
 .mobile .promo, .tablet .promo {
-  width: 60vw;
-  left: calc(50% - 30vw); }
+  width: 60vw !important;
+  left: calc(50% - 30vw) !important; }
+  .mobile .promo div, .tablet .promo div {
+    font-size: 4vw; }
   .mobile .promo input, .tablet .promo input {
     font-size: 5vw; }
 
@@ -599,6 +631,8 @@ body {
           font-size: 20px; }
         .mobile .pane .zone h1 {
           font-size: 55px; }
+        .mobile .pane .zone button {
+          position: relative; }
     .mobile .left {
       top: 0;
       width: 33%;
@@ -700,4 +734,36 @@ body {
       .mobile .social a {
         width: 10vh;
         height: 10vh;
-        font-size: 3vh; } }
+        font-size: 3vh; }
+    .mobile .promo-overlay {
+      width: 102vw; }
+      .mobile .promo-overlay .promo div {
+        font-size: 3vw !important; }
+      .mobile .promo-overlay .promo input {
+        font-size: 5vh !important;
+        width: 75% !important; }
+    .mobile .help-zone {
+      top: calc(50% - 12vw);
+      left: calc(50% - 9vw); }
+      .mobile .help-zone .help {
+        display: flex; }
+        .mobile .help-zone .help .block {
+          width: 14vw;
+          height: 14vw; }
+        .mobile .help-zone .help .symbol {
+          margin: auto;
+          width: 14vw;
+          height: 14vw;
+          line-height: 14vw; } }
+
+.goDown {
+  top: calc(65% - 100px) !important; }
+
+.goUp {
+  top: calc(35% - 100px) !important; }
+
+.goLeft {
+  left: calc(65% - 100px) !important; }
+
+.goRight {
+  left: calc(35% - 100px) !important; }

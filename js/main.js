@@ -6,6 +6,7 @@
 var isGoing = false;
 var isMobile = false;
 var landType = 'port';
+var PaneBinder=[0,0,0,0,0,0,0,];
 
 function GoMain() {
     isGoing = true;
@@ -138,6 +139,11 @@ $(document).ready(function () {
     //--------------------------------------------------------------------------
     function toogleorientation(match) {
         if (isMobile) {
+            $('.help-zone').removeClass('goDown');
+            $('.help-zone').removeClass('goUp');
+            $('.help-zone').removeClass('goLeft');
+            $('.help-zone').removeClass('goRight');
+
             $('.zone').hide();
             if (landType == 'landscape-primary') {
                 lanscapeOrientation = true;
@@ -189,15 +195,27 @@ $(document).ready(function () {
             $('.promo').delay(300).show();
         })
     });
-    $('.promo-overlay').on('click', function () {
-        if (!isMobile)
+    $('.promo-overlay').on('click', function (e) {
+        // if (!isMobile)
+       // console.log($(this), e, e.target);
+        if(e.target.type!='text')
             $('.promo').fadeOut(400, function () {
                 $('.promo-overlay').fadeOut();
             })
     });
     //-end
 
-
+    function mouseProvide() {
+        // console.log(PaneBinder);
+        // console.log(111);
+        for (var i=0; i<PaneBinder.length; i++){
+            if(PaneBinder[i]==1){
+                $('.zone').hide();
+                console.log('fixed');
+                return;
+            }
+        }
+    }
 
     var canIddle = true;
 
@@ -210,7 +228,7 @@ $(document).ready(function () {
             return;
 
         if (!$('body').hasClass('mobile')) {
-
+            mouseProvide();
             $('.zone').hide();
             // console.log($(this).data('go'));
             //--------------------------------------------------------------------------------
@@ -226,7 +244,7 @@ $(document).ready(function () {
                         $('#g2').find('.zone').show();
                         canIddle = false;
                     });
-
+                    // PaneBinder[2]=1;
                     break;
                 case 'g4':
                     canIddle = true;
@@ -237,7 +255,7 @@ $(document).ready(function () {
                         $('#g4').find('.zone').show();
                         canIddle = false;
                     });
-
+                    // PaneBinder[4]=1;
                     break;
                 case 'g3':
                     canIddle = true;
@@ -256,7 +274,7 @@ $(document).ready(function () {
                         $('#g3').find('.zone').show();
                         canIddle = false;
                     });
-
+                    // PaneBinder[3]=1;
 
                     break;
                 case 'g5':
@@ -271,7 +289,7 @@ $(document).ready(function () {
                         $('#g5').find('.zone').show();
                         canIddle = false;
                     });
-
+                    // PaneBinder[5]=1;
 
                     break;
             }
@@ -283,14 +301,19 @@ $(document).ready(function () {
                     case 'g2':
                         $('#g2').delay(200).css({zIndex: '20'}).animate({height: '43%', top: '12%'}, 700);//, function () {
                         $('#g2').find('.zone').show();
+
+                        $('.help-zone').addClass('goDown');
                         break;
                     case 'g4':
                         $('#g4').delay(200).css({zIndex: '20'}).animate({height: '43%', top: '45%'}, 700);//, function () {
                         $('#g4').find('.zone').show();
+                        $('.help-zone').addClass('goUp');
                         break;
                     case 'g3':
                         $('#g3').delay(200).css({zIndex: '20'}).animate({height: '48%', top: '-16%'}, 700);//, function () {
+
                         $('#g3').find('.zone').show();
+
                         break;
                     case 'g5':
                         $('#g5').delay(200).css({zIndex: '20'}).animate({height: '43%', top: '73%'}, 700);
@@ -299,15 +322,18 @@ $(document).ready(function () {
                 }
                 // }
             } else {
-                console.log(1);
+                // console.log(1);
                 switch ($(this).data('go')) {
                     case 'g2':
                         $('#g2').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '12%'}, 700);//, function () {
                         $('#g2').find('.zone').show();
+
+                        $('.help-zone').addClass('goLeft');
                         break;
                     case 'g4':
                         $('#g4').delay(200).css({zIndex: '20'}).animate({width: '43%', left: '45%'}, 700);//, function () {
                         $('#g4').find('.zone').show();
+                        $('.help-zone').addClass('goRight');
                         break;
                     case 'g3':
                         $('#g3').delay(200).css({zIndex: '20'}).animate({width: '52%'}, 700);//, function () {
@@ -336,7 +362,10 @@ $(document).ready(function () {
                     // $('#g2').stop().animate({left: '21%', width: '20%'}, 200, function () {
                     // canIddle=true
                     // });
-                    $('#g2').css({zIndex: '15'}).animate({left: '21%', width: '20%'}, 100);
+                    $('#g2').css({zIndex: '15'}).animate({left: '21%', width: '20%'}, 100, function () {
+                        $('.zone').hide();
+                    });
+                    // PaneBinder[2]=0;
                     break;
                 case 'g4':
                     // $('#g2').stop().css('left', '37%');
@@ -345,7 +374,10 @@ $(document).ready(function () {
                     // });
                     // $('#g4').find('.zone').fadeOut(200);
 
-                    $('#g4').css({zIndex: '15'}).animate({right: '21%', width: '20%'}, 100);
+                    $('#g4').css({zIndex: '15'}).animate({right: '21%', width: '20%'}, 100, function () {
+                        $('.zone').hide();
+                    });
+                    // PaneBinder[4]=0;
                     break;
                 case 'g3':
                     //
@@ -355,18 +387,25 @@ $(document).ready(function () {
                     // $('#g1').stop().animate({left: '37%', width: '27%'}, 200);
                     //
 
-                    $('#g3').css({zIndex: '15'}).animate({width: '25%'}, 100);//, function () {
+                    $('#g3').css({zIndex: '15'}).animate({width: '25%'}, 100, function () {
+                        $('.zone').hide();
+                    });//, function () {
+                    // PaneBinder[3]=0;
                     break;
                 case 'g5':
                     // $('#g4').stop().animate({right: '21%', width: '20%'}, 200);
                     // $('#g2').stop().animate({left: '21%', width: '20%'}, 200);
                     // $('#g1').stop().animate({left: '37%', width: '27%'}, 200);
 
-                    $('#g5').css({zIndex: '15'}).animate({width: '25%'}, 100);//, function () {
-
+                    $('#g5').css({zIndex: '15'}).animate({width: '25%'}, 100, function () {
+                        $('.zone').hide();
+                    });//, function () {
+                    // PaneBinder[5]=0;
                     break;
             }
-
+            setTimeout(function () {
+                $('.zone').hide();
+            },110);
 
         } else {
             // $(this).animate({width: "50%", height: '50%'}, 200);
@@ -374,6 +413,7 @@ $(document).ready(function () {
             if (!lanscapeOrientation) {
                 switch ($(this).data('go')) {
                     case 'g2':
+                        $('.help-zone').removeClass('goDown');
                         $('#g2').animate({height: '33%', top: '17%'}, 200, function () {
                             $(this).css({zIndex: '15'});
                         });
@@ -382,6 +422,7 @@ $(document).ready(function () {
                         $('#g4').animate({height: '33%', top: '50%'}, 200, function () {
                             $(this).css({zIndex: '15'});
                         });
+                        $('.help-zone').removeClass('goUp');
                         break;
                     case 'g3':
                         $('#g3').animate({height: '33%', top: '-16%'}, 200, function () {
@@ -401,11 +442,13 @@ $(document).ready(function () {
                         $('#g2').animate({width: '33%', left: '17%'}, 200, function () {
                             $(this).css({zIndex: '15'});
                         });
+                        $('.help-zone').removeClass('goLeft');
                         break;
                     case 'g4':
                         $('#g4').animate({width: '33%', left: '50%'}, 200, function () {
                             $(this).css({zIndex: '15'});
                         });
+                        $('.help-zone').removeClass('goRight');
                         break;
                     case 'g3':
                         $('#g3').animate({width: '33%', left: '-16%'}, 200, function () {
