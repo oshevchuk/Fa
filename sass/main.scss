@@ -590,7 +590,7 @@ body {
     img {
       display: block;
       margin: auto;
-      width: 150px;
+      width: 100px;
     }
   }
 
@@ -657,7 +657,7 @@ body {
       text-align: center;
       color: white;
       //display: block;
-      top: 40%;
+      top: 47%;
       width: 260px;
       //width: 100%;
       //left: -44%;
@@ -676,6 +676,23 @@ body {
         width: 100%;
         font-size: 3vh;
         box-sizing: border-box;
+      }
+
+      button {
+        //display: block;
+        //position: absolute;
+        bottom: 10%;
+        border: none;
+        background-color: #d7182a;
+        color: white;
+        border-radius: 5px;
+        width: 120px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #292929;
       }
     }
   }

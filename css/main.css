@@ -373,7 +373,7 @@ body {
     .second-page .logo img {
       display: block;
       margin: auto;
-      width: 150px; }
+      width: 100px; }
   .second-page .help-zone {
     position: absolute;
     z-index: 10;
@@ -422,7 +422,7 @@ body {
       position: absolute;
       text-align: center;
       color: white;
-      top: 40%;
+      top: 47%;
       width: 260px;
       pointer-events: all;
       left: calc(50% - 130px); }
@@ -437,6 +437,18 @@ body {
         width: 100%;
         font-size: 3vh;
         box-sizing: border-box; }
+      .second-page .promo-overlay .promo button {
+        bottom: 10%;
+        border: none;
+        background-color: #d7182a;
+        color: white;
+        border-radius: 5px;
+        width: 120px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 10px; }
+      .second-page .promo-overlay .promo button:hover {
+        background-color: #292929; }
 
 @-webkit-keyframes pulse {
   0% {

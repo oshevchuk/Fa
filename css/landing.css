@@ -11,4 +11,515 @@
   src: url(ProximaNova-LightIt.otf); }
 
 body {
-  margin: 0; }
+  margin: 0;
+  background-color: #181a1b;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Open Sans"; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2%;
+  padding-left: 2%;
+  background-color: #181a1b;
+  z-index: 10;
+  font-size: 14px; }
+  .header img {
+    height: 30px; }
+  .header ul {
+    padding: 0;
+    list-style: none; }
+    .header ul li {
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-right: 1px solid #656565; }
+      .header ul li a {
+        text-decoration: none;
+        color: #656565; }
+      .header ul li a:hover {
+        color: white; }
+    .header ul li:last-child {
+      border-right: none; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: black;
+  z-index: 10;
+  cursor: pointer; }
+  .footer a {
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    margin-bottom: 20px;
+    color: #656565; }
+  .footer a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid #656565;
+    border-bottom: 1px solid #656565;
+    transform: rotate(-45deg);
+    left: calc(50% - 10px);
+    top: 15px; }
+  .footer a:hover {
+    color: white; }
+    .footer a:hover:after {
+      border-left: 1px solid white;
+      border-bottom: 1px solid white; }
+  .footer:hover a {
+    color: white; }
+    .footer:hover a:after {
+      border-left: 1px solid white;
+      border-bottom: 1px solid white; }
+
+.page {
+  min-width: 100%;
+  min-height: 100vh; }
+  .page .cover {
+    position: absolute; }
+  .page .mask {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); }
+  .page .slides {
+    min-width: 100%;
+    min-height: 100%; }
+  .page .slideshow-container {
+    height: 100%;
+    position: relative;
+    margin: auto; }
+    .page .slideshow-container .sp {
+      display: block;
+      width: 100%;
+      height: 100vh; }
+    .page .slideshow-container img {
+      max-height: 100%;
+      max-width: 100%;
+      margin: auto;
+      object-fit: cover;
+      object-position: 50% 50%;
+      position: relative;
+      display: block; }
+  .page .number-text {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 20vh;
+    width: 100%; }
+  .page .text-zone {
+    box-sizing: border-box;
+    max-width: 1024px;
+    padding-left: calc(2% + 20px);
+    padding-right: calc(2% + 20px);
+    margin: auto;
+    position: relative;
+    text-align: justify; }
+    .page .text-zone h1 {
+      font-size: 5em;
+      color: #d7182a;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0;
+      display: block;
+      position: relative; }
+      .page .text-zone h1 span {
+        display: block;
+        content: '';
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #d7182a;
+        position: absolute;
+        top: calc(50% - 8px);
+        left: -40px; }
+      .page .text-zone h1 span:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 40vw;
+        height: 2px;
+        top: 6px;
+        left: -40vw;
+        background-color: #d7182a;
+        direction: rtl; }
+    .page .text-zone span {
+      font-size: 2.5em;
+      color: white;
+      font-family: "Open Sans Light"; }
+    .page .text-zone div {
+      width: 100%;
+      text-align: right; }
+    .page .text-zone button {
+      bottom: 10%;
+      border: none;
+      background-color: #d7182a;
+      color: white;
+      border-radius: 5px;
+      width: 130px;
+      height: 40px;
+      font-size: 16px; }
+    .page .text-zone button:hover {
+      background-color: #292929; }
+  .page .SlideControll {
+    width: 100%;
+    position: absolute;
+    bottom: 100px; }
+    .page .SlideControll div {
+      max-width: 904px;
+      padding-left: calc(2%);
+      padding-right: calc(2%);
+      margin: auto; }
+    .page .SlideControll .dot {
+      height: 14px;
+      width: 14px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease; }
+    .page .SlideControll .active {
+      background-color: red; }
+
+.cover {
+  width: 100%;
+  height: 100%; }
+  .cover .content {
+    position: absolute;
+    top: 25vh;
+    width: 100%; }
+    .cover .content .zone {
+      transition: 0.4s;
+      position: relative;
+      font-size: 12px;
+      display: none; }
+      .cover .content .zone button {
+        margin-top: 20px; }
+      .cover .content .zone .alfa {
+        background-color: #353637;
+        margin: calc(100% - 20px) auto;
+        height: 120px;
+        max-width: 800px; }
+      .cover .content .zone .bravo {
+        position: relative;
+        height: 120px;
+        width: 100%;
+        overflow-y: scroll;
+        background-clip: border-box;
+        color: black;
+        mix-blend-mode: multiply;
+        background-color: #353637; }
+  .cover .right {
+    text-align: right; }
+    .cover .right h1 span {
+      left: auto;
+      right: -40px; }
+      .cover .right h1 span:after {
+        left: auto; }
+  .cover .left div {
+    text-align: left; }
+  .cover .scrollbar-inner {
+    max-width: 1024px;
+    background-color: rgba(0, 0, 0, 0.4);
+    max-height: 300px;
+    margin: auto;
+    color: white; }
+    .cover .scrollbar-inner .scroll-content {
+      padding: 25px; }
+      .cover .scrollbar-inner .scroll-content h3 {
+        font-size: 25px;
+        margin: 0; }
+      .cover .scrollbar-inner .scroll-content p {
+        font-size: 16px; }
+
+#page3 .content {
+  top: 15vh; }
+  #page3 .content h1 {
+    margin-bottom: 15px;
+    text-transform: capitalize; }
+
+#page4 {
+  background-color: white; }
+  #page4 .content {
+    top: 10vh;
+    width: 100%;
+    min-height: 100%; }
+  #page4 .slides {
+    min-height: auto;
+    position: absolute;
+    height: 50vh;
+    top: 11vh;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%; }
+  #page4 .mask {
+    top: 11vh;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.8); }
+  #page4 h2 {
+    font-size: 45px;
+    margin: 0;
+    padding: 0;
+    line-height: 45px;
+    color: #ee2c1c; }
+  #page4 .mob-icon {
+    display: flex;
+    text-align: center; }
+    #page4 .mob-icon div {
+      text-align: center; }
+    #page4 .mob-icon .phone {
+      min-height: 300px;
+      max-height: 50vh; }
+    #page4 .mob-icon .phone-type {
+      width: 170px;
+      margin: auto;
+      display: block; }
+
+#page3 .cover {
+  background-image: url("../img/slides/08_Palhares_Massenzio_02-e1355361640365.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  #page3 .cover .slides {
+    display: none; }
+
+#page2 .cover {
+  background-image: url("../img/slides/4a416e56e018c5070d5803dcf6791c9b.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  #page2 .cover .slides {
+    display: none; }
+
+.fade {
+  -webkit-animation-name: fade;
+  -moz-animation-name: fade;
+  -o-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
+
+.scroll-wrapper {
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: relative; }
+
+.scroll-wrapper > .scroll-content {
+  border: none !important;
+  box-sizing: content-box !important;
+  height: auto;
+  left: 0;
+  margin: 0;
+  max-height: none;
+  max-width: none !important;
+  overflow: scroll !important;
+  padding: 0;
+  position: relative !important;
+  top: 0;
+  width: auto !important; }
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+  height: 0;
+  width: 0; }
+
+.scroll-element {
+  display: none; }
+
+.scroll-element, .scroll-element div {
+  box-sizing: content-box; }
+
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+  display: block; }
+
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+  cursor: default; }
+
+.scroll-textarea {
+  border: 1px solid #cccccc;
+  border-top-color: #999999; }
+
+.scroll-textarea > .scroll-content {
+  overflow: hidden !important; }
+
+.scroll-textarea > .scroll-content > textarea {
+  border: none !important;
+  box-sizing: border-box;
+  height: 100% !important;
+  margin: 0;
+  max-height: none !important;
+  max-width: none !important;
+  overflow: scroll !important;
+  outline: none;
+  padding: 2px;
+  position: relative !important;
+  top: 0;
+  width: 100% !important; }
+
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+  height: 0;
+  width: 0; }
+
+.mobile {
+  overflow-y: scroll; }
+  .mobile .header {
+    position: relative; }
+  .mobile .footer {
+    display: none; }
+  .mobile .page {
+    position: relative;
+    overflow: hidden; }
+    .mobile .page .SlideControll {
+      display: none; }
+    .mobile .page .mob-icon div {
+      width: 50%;
+      position: relative; }
+    .mobile .page .phone {
+      min-width: auto;
+      min-width: auto;
+      width: 100%; }
+    .mobile .page .phone-type {
+      position: absolute;
+      bottom: -60px;
+      width: 100% !important; }
+  .mobile .number-text, .mobile .content {
+    top: 0vh; }
+    .mobile .number-text h1, .mobile .content h1 {
+      font-size: 3em; }
+    .mobile .number-text span, .mobile .content span {
+      font-size: 1.5em; }
+    .mobile .number-text button, .mobile .content button {
+      margin-top: 50px; }
+  .mobile .zone {
+    display: block !important; }
+  .mobile #page4 h2 {
+    font-size: 29px;
+    line-height: 39px;
+    padding-top: 1vh;
+    padding-bottom: 1vh; }
+  .mobile #page3 .cover {
+    background-image: url("../img/slides/08_Palhares_Massenzio_02-e1355361640365.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .mobile #page3 .cover .slides {
+      display: none; }
+  .mobile #page2 .cover {
+    background-image: url("../img/slides/4a416e56e018c5070d5803dcf6791c9b.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .mobile #page2 .cover .slides {
+      display: none; }
+  .mobile #page1 .slides {
+    background-image: url("../img/slides/08_Palhares_Massenzio_02-e1355361640365.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .mobile #page1 .slides img {
+      display: none !important; }
+
+/*************** SIMPLE INNER SCROLLBAR ***************/
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-inner > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-inner > .scroll-element.scroll-x {
+  bottom: 2px;
+  height: 8px;
+  left: 0;
+  width: 100%; }
+
+.scrollbar-inner > .scroll-element.scroll-y {
+  height: 100%;
+  right: 2px;
+  top: 0;
+  width: 8px; }
+
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+  overflow: hidden; }
+
+.scrollbar-inner > .scroll-element .scroll-element_outer,
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px; }
+
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+  opacity: 0.4; }
+
+.scrollbar-inner > .scroll-element .scroll-element_track {
+  background-color: #e0e0e0; }
+
+.scrollbar-inner > .scroll-element .scroll-bar {
+  background-color: #c2c2c2; }
+
+.scrollbar-inner > .scroll-element:hover .scroll-bar {
+  background-color: #919191; }
+
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: #919191; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -12px; }
+
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -12px; }
+
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -12px; }
+
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -12px; }

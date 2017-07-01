@@ -6,7 +6,17 @@
 var isGoing = false;
 var isMobile = false;
 var landType = 'port';
-var PaneBinder=[0,0,0,0,0,0,0,];
+var PaneBinder=[0,0,0,0,0,0,0];
+
+function goLanding(){
+    window.location.href="landing.html";
+    // window.location.replace("landing.html");
+}
+
+$('button').click(function () {
+    window.location.href="landing.html";
+    // window.location.replace("landing.html");
+});
 
 function GoMain() {
     isGoing = true;
@@ -43,6 +53,9 @@ function ResizeBinder() {
         if (temp_width < 1024)
             temp_width = 1024;
         $('body').css('min-width', Math.round(temp_width), 'overflow-x', 'scroll');
+
+        $('.promo-overlay').css('width', Math.round(temp_width));
+
         $('.second-page').css('position', 'relative');
 
         // console.log(window.innerWidth, window.innerHeight);
