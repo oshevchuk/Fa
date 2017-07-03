@@ -43,8 +43,7 @@ abbr, acronym {
  * --------------------------------------- */
 body {
   font-family: arial, helvetica;
-  color: #333;
-  color: rgba(0, 0, 0, 0.5); }
+  color: #333; }
 
 .wrap {
   margin-left: auto;
@@ -307,3 +306,88 @@ p {
   width: 50%;
   margin: 0 auto;
   font-size: 1.5em; }
+
+.go-next {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  min-height: 20px;
+  z-index: 1;
+  background-color: black; }
+  .go-next a {
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    margin-bottom: 20px;
+    color: #656565; }
+  .go-next a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid #656565;
+    border-bottom: 1px solid #656565;
+    transform: rotate(-45deg);
+    left: calc(50% - 10px);
+    top: 15px; }
+  .go-next a:hover {
+    color: white; }
+    .go-next a:hover:after {
+      border-left: 1px solid white;
+      border-bottom: 1px solid white; }
+  .go-next:hover a {
+    color: white; }
+    .go-next:hover a:after {
+      border-left: 1px solid white;
+      border-bottom: 1px solid white; }
+
+.fp-tableCell {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.intro {
+  max-width: 1000px;
+  margin: auto; }
+  .intro h1 {
+    color: #f61d31;
+    text-transform: uppercase;
+    font-size: 50pt;
+    font-weight: bold;
+    margin-bottom: 2vh; }
+  .intro p {
+    color: white;
+    text-align: right;
+    display: block;
+    float: right;
+    margin-right: calc(4% + 30px); }
+    .intro p:last-child {
+      margin-top: 20px; }
+  .intro .pre-con {
+    padding-top: 20%; }
+
+#section1 {
+  background-image: url("../img/slides/4a416e56e018c5070d5803dcf6791c9b.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#section2 {
+  background-image: url("../img/slides/08_Palhares_Massenzio_02-e1355361640365.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #section2 .scrollbar-inner {
+    max-width: 1024px;
+    background-color: rgba(0, 0, 0, 0.4);
+    max-height: 300px;
+    margin: auto;
+    color: white; }
+    #section2 .scrollbar-inner .scroll-content {
+      padding: 25px; }
+      #section2 .scrollbar-inner .scroll-content h3 {
+        font-size: 25px;
+        margin: 0; }
+      #section2 .scrollbar-inner .scroll-content p {
+        font-size: 16px; }

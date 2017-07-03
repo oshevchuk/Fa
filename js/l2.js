@@ -14,5 +14,6 @@ $(document).ready(function(){
         scrollingSpeed: 1000
     });
 
+    $('.scrollbar-inner').scrollbar();
 });
 
